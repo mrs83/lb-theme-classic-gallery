@@ -187,7 +187,7 @@
                             var el = angular.element(element).find('.gallery');
                             $(el[0]).justifiedGallery({
                                 margins : 3
-                            }).on('jg.complete', function () {
+                            }).on('jg.complete', function() {
                                 $(this).photoSwipe();
                             });
                         }, 100);

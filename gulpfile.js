@@ -20,7 +20,7 @@ gulp.task('pot', function () {
         .pipe($.angularGettext.extract('classic.pot', {}))
         .pipe(gulp.dest('po/'));
 });
- 
+
 gulp.task('translations', function () {
     return gulp.src('po/*.po')
         .pipe($.angularGettext.compile({format: 'json'}))
@@ -60,10 +60,10 @@ gulp.task('build', ['translations', 'templates'], function() {
                 styles: []
             }, to: {
                 scripts: [],
-                styles: []                
+                styles: []
             }
         };
-    
+
     if(theme.devScripts) {
         theme.devScripts.forEach(function(script) {
             // check if it is an external url, if so add it like that in final scripts.
@@ -106,6 +106,10 @@ gulp.task('build', ['translations', 'templates'], function() {
         build.to.styles.push(config.get('style'));
         theme.styles = build.to.styles;
     }
+    // Copy theme image asserts for PhotoSwipe
+    gulp.src(['styles/default-skin/*'])
+        .pipe(gulp.dest(config.dest));
+
     // automatic `patch` increase in `version`.
     if(theme.version) {
         var version = theme.version.split('.');
