@@ -1,0 +1,6 @@
+<div class="justified-gallery gallery">
+    <a href="{{ item.picture_url }}" ng-repeat="item in gallery.images track by item._id">
+      <img ng-src="{{ item.picture_url }}" ng-srcset="{{ item.picture_srcset }}" alt="{{ item.meta.caption }}" />
+    </a>
+  </span>
+</div>
