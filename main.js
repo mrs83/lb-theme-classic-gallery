@@ -137,6 +137,7 @@
         var images = _.filter(vm.items, function(item) {
             return item.item_type === 'image';
         });
+        console.log(images);
         vm.images = images;
     }
 
@@ -186,6 +187,8 @@
                             var el = angular.element(element).find('.gallery');
                             $(el[0]).justifiedGallery({
                                 margins : 3
+                            }).on('jg.complete', function () {
+                                $(this).photoSwipe();
                             });
                         }, 100);
                     });
