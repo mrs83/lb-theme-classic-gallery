@@ -13,13 +13,15 @@
         </a>
     </div>
 
+    <lb-gallery items="post.items"></lb-gallery>
+
     <div ng-repeat="item in post.items track by item._id" class="lb-item">
         <div ng-if="post.fullDetails && !$first" class="list-group-item">
             <div class="lb-timeline__header">
                 <lb-author item="item" timeline="timeline"></lb-author>
                 <lb-item item="item" ident="true"></lb-item>
             </div>
-        </div>                
+        </div>
         <div ng-if="!post.fullDetails || $first">
             <lb-item item="item"></lb-item>
         </div>

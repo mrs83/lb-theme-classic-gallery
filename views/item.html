@@ -7,17 +7,12 @@
             <div ng-switch-default lb-generic-embed lb-fluid-iframe item="item"></div>
         </div>
     </div>
-    <div ng-switch-when="image">
-        <figure>
-            <img ng-src="{{ item.picture_url }}" ng-srcset="{{ item.picture_srcset }}" alt="{{ item.meta.caption }}" sizes="80vw"/>
-            <figcaption translate>{{ item.meta.caption }} credit: {{ item.meta.credit }}
-        </figure>
-    </div>
     <div ng-switch-when="quote">
         <blockquote>
             <p>{{ item.meta.quote }}</p>
             <h4>{{ item.meta.credit }}</h4>
         </blockquote>
     </div>
+    <div ng-switch-when="image"></div>
     <article ng-switch-default lb-bind-html html-content="{{ item.text | outboundAnchors | fixMarkup }}"></article>
 </div>

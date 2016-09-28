@@ -1,17 +1,17 @@
 {
-  "name": "classic",
-  "description": "Classic Theme",
+  "name": "gallery",
+  "description": "Gallery Theme",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liveblog/lb-theme-classic.git"
+    "url": "https://github.com/mscam/lb-theme-classic.git"
   },
-  "author": "Edouard Richard <edouard.richard@sourcefabric.org>",
+  "author": "Massimo Scamarcia <massimo.scamarcia@sourcefabric.org>",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/liveblog/lb-theme-classic/issues"
+    "url": "https://github.com/mscam/lb-theme-classic/issues"
   },
-  "homepage": "https://github.com/liveblog/lb-theme-classic",
+  "homepage": "https://github.com/mscam/lb-theme-classic",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-angular-gettext": "^2.1.0",

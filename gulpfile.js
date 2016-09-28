@@ -83,7 +83,9 @@ gulp.task('build', ['translations', 'templates'], function() {
         }
         gulp.src(build.from.scripts)
             .pipe($.concat(config.script))
-            .pipe($.uglify())
+            .pipe($.uglify().on('error', function(e) {
+            	console.log(e);
+             }))
             .pipe(gulp.dest(config.dest));
         build.to.scripts.push(config.get('script'));
         theme.scripts = build.to.scripts;

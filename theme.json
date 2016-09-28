@@ -1,11 +1,11 @@
 {
-    "label": "Classic Theme",
-    "name": "classic",
-    "version": "2.3.27",
-    "author": "Edouard Richard <edouard.richard@sourcefabric.org>",
+    "label": "Gallery Theme",
+    "name": "gallery",
+    "version": "1.0.54",
+    "author": "Massimo Scamarcia <massimo.scamarcia@sourcefabric.org>",
     "repository": {
         "type": "git",
-        "url": "git@github.com:liveblog/lb-theme-classic.git"
+        "url": "git@github.com:mscam/lb-theme-classic.git"
     },
     "license": "AGPL-3.0",
     "extends": "angular",
@@ -13,6 +13,7 @@
         "styles/reset.css",
         "styles/embed.css",
         "styles/dropdown.css",
+        "styles/justifiedGallery.min.css",
         "https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic",
         "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
     ],
@@ -25,6 +26,7 @@
         "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-animate.min.js",
         "https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.2/ng-infinite-scroll.min.js",
         "vendors/angular-gettext.js",
+        "vendors/jquery.justifiedGallery.min.js",
         "main.js"
     ],
     "scripts": [

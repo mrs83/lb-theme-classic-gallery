@@ -130,11 +130,21 @@
         });
     }
 
+    GalleryCtrl.$inject = ['$scope'];
+    function GalleryCtrl($scope) {
+        var vm = this;
+        // Filter posts getting only images
+        var images = _.filter(vm.items, function(item) {
+            return item.item_type === 'image';
+        });
+        vm.images = images;
+    }
+
     angular.module('theme', ['liveblog-embed', 'ngAnimate', 'infinite-scroll', 'gettext'])
         .run(['gettextCatalog', 'config', function (gettextCatalog, config) {
             gettextCatalog.setCurrentLanguage(config.settings.language);
         }])
-        .run(['$rootScope', function($rootScope){
+        .run(['$rootScope', function($rootScope) {
             angular.element(document).on("click", function(e) {
                 $rootScope.$broadcast("documentClicked", angular.element(e.target));
             });
@@ -158,6 +168,28 @@
                     timeline: '='
                 },
                 templateUrl: asset.templateUrl('views/author.html'),
+            }
+        }])
+        .directive('lbGallery', ['asset', function(asset) {
+            return {
+                restrict: 'AE',
+                scope: {
+                    items: '='
+                },
+                bindToController: true,
+                controller: GalleryCtrl,
+                controllerAs: 'gallery',
+                templateUrl: asset.templateUrl('views/gallery.html'),
+                link: function(scope, element, attrs, parentController) {
+                    scope.$watch(attrs.items, function(value) {
+                        setTimeout(function() {
+                            var el = angular.element(element).find('.gallery');
+                            $(el[0]).justifiedGallery({
+                                margins : 3
+                            });
+                        }, 100);
+                    });
+                }
             }
         }])
         .directive('lbPosts', ['asset', function(asset) {
