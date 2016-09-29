@@ -106,7 +106,7 @@ gulp.task('build', ['translations', 'templates'], function() {
         build.to.styles.push(config.get('style'));
         theme.styles = build.to.styles;
     }
-    // Copy theme image asserts for PhotoSwipe
+    // Copy theme image assets for PhotoSwipe
     gulp.src(['styles/default-skin/*'])
         .pipe(gulp.dest(config.dest));
 
