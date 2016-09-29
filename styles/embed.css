@@ -17,7 +17,6 @@ img {
     width: auto;
     height: auto;
 }
-
 img.pswp__img {
     max-width: none;
     max-height: none;
@@ -341,12 +340,14 @@ button.active {
 .lb-author__date {
     padding-right: 20px;
 }
-.show-author-avatar .lb-author, .show-author-avatar .lb-item {
+.show-author-avatar .lb-author, .show-author-avatar .lb-item, .lb-author {
+    margin-left: 80px;
+}
+.lb-gallery {
     margin-left: 80px;
 }
 .lb-item {
     clear: both;
-}
 }
 .lb-post-date {
     float: left;
